@@ -1,0 +1,9 @@
+.content {
+  flex-grow: 1;
+  /* background-color: red; */
+  padding: 2;
+  margin-top: 5rem;
+}
+.root {
+  flex-grow: 1;
+}

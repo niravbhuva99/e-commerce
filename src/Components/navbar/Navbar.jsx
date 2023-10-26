@@ -1,30 +1,33 @@
-import {
-  AppBar,
-  Badge,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
-import useStyles from "./styles";
+import Badge from "@mui/material/Badge";
+
+import { Typography, Toolbar, IconButton, AppBar } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import classes from "./styles.module.css";
+import { NavLink, useLocation } from "react-router-dom";
+
 const Navbar = ({ total_items }) => {
-  const classes = useStyles();
+  const location = useLocation();
 
   return (
     <>
       <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            E-commerce
-          </Typography>
+        <Toolbar className={classes.toolbar}>
+          <NavLink to="/">
+            <Typography variant="h6" className={classes.title}>
+              E-commerce
+            </Typography>
+          </NavLink>
           <div className={classes.grow} />
           <div className={classes.button}>
-            <IconButton>
-              <Badge badgeContent={total_items} color="secondary">
-                <ShoppingCart />
-              </Badge>
-            </IconButton>
+            {location.pathname === "/" && (
+              <NavLink to="/cart">
+                <IconButton>
+                  <Badge badgeContent={total_items} color="secondary">
+                    <ShoppingCartIcon />
+                  </Badge>
+                </IconButton>
+              </NavLink>
+            )}
           </div>
         </Toolbar>
       </AppBar>

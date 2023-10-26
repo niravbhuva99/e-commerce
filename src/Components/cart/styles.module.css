@@ -1,0 +1,27 @@
+.emptyButton {
+  min-width: 150px;
+}
+.checkoutButton {
+  min-width: 150px;
+}
+.link {
+  text-decoration: none;
+}
+.cardDetails {
+  display: flex;
+  width: 100%;
+}
+/* .cardContent {
+  display: flex;
+  justify-content: space-between;
+  height: "30px";
+  border: "2px solid black";
+  flex-wrap: nowrap;
+} */
+.totel {
+  margin-top: 25px;
+}
+.image {
+  height: 150px;
+  width: 100px;
+}
